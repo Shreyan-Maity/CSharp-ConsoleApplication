@@ -78,67 +78,85 @@
 
 //-------------------------------------------------------------------------
 
-public class Students
+//public class Students
+//{
+//    int roll;
+//    string name;
+//    int age;
+//    string course;
+//    double fees;
+//    public void Input()
+//    {
+//        try
+//        {
+//            Console.Write("\nEnter the Roll : ");
+//            roll = Convert.ToInt32(Console.ReadLine());
+
+//            Console.Write("Enter the Name : ");
+//            name = Console.ReadLine();
+
+//            Console.Write("Enter the Age : ");
+//            age = Convert.ToInt32(Console.ReadLine());
+
+//            Console.Write("Enter the Course name : ");
+//            course = Console.ReadLine();
+
+//            Console.Write("Enter the fess : ");
+//            fees = Convert.ToDouble(Console.ReadLine());
+//        }
+//        catch (FormatException ex)
+//        {
+//            Console.WriteLine("Wrong Format data entered. Start Over again !!!\nRestart The Programe. or this entry will have all '0' values ");
+//        }
+
+//    }
+
+//    public void Display()
+//    {
+//        Console.WriteLine("/////////////////////////////");
+//        Console.WriteLine("Entered Roll:" + roll);
+//        Console.WriteLine("Entered Name:" + name);
+//        Console.WriteLine("Entered Age:" + age);
+//        Console.WriteLine("Entered Fees:" + fees);
+//        Console.WriteLine("Entered Course:" + course);
+//        //Console.WriteLine("/////////////////////////////");
+
+//    }
+//    public static void Main()
+//    {
+//        Students FirstStudent = new Students();
+//        Students SecondStudent = new Students();
+//        Students ThirdStudent = new Students();
+//        Students FourthStudent = new Students();
+
+//        FirstStudent.Input();
+//        SecondStudent.Input();
+//        ThirdStudent.Input();
+//        FourthStudent.Input();
+
+//        FirstStudent.Display();
+//        SecondStudent.Display();
+//        ThirdStudent.Display();
+//        FourthStudent.Display();
+
+//        Console.ReadLine();
+//    }
+//}
+
+//-------------------------------------------------------------------------
+
+public class Program
 {
-    int roll;
-    string name;
-    int age;
-    string course;
-    double fees;
-    public void Input()
+    public int Add(int x,int y)
     {
-        try
-        {
-            Console.Write("\nEnter the Roll : ");
-            roll = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter the Name : ");
-            name = Console.ReadLine();
-
-            Console.Write("Enter the Age : ");
-            age = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter the Course name : ");
-            course = Console.ReadLine();
-
-            Console.Write("Enter the fess : ");
-            fees = Convert.ToDouble(Console.ReadLine());
-        }
-        catch (FormatException ex)
-        {
-            Console.WriteLine("Wrong Format data entered. Start Over again !!!\nRestart The Programe. or this entry will have all '0' values ");
-        }
-
-    }
-    
-    public void Display()
-    {
-        Console.WriteLine("/////////////////////////////");
-        Console.WriteLine("Entered Roll:" + roll);
-        Console.WriteLine("Entered Name:" + name);
-        Console.WriteLine("Entered Age:" + age);
-        Console.WriteLine("Entered Fees:" + fees);
-        Console.WriteLine("Entered Course:" + course);
-        //Console.WriteLine("/////////////////////////////");
-
+        return x + y;
     }
     public static void Main()
     {
-        Students FirstStudent = new Students();
-        Students SecondStudent = new Students();
-        Students ThirdStudent = new Students();
-        Students FourthStudent = new Students();
-        
-        FirstStudent.Input();
-        SecondStudent.Input();
-        ThirdStudent.Input();
-        FourthStudent.Input();
-
-        FirstStudent.Display();
-        SecondStudent.Display();
-        ThirdStudent.Display();
-        FourthStudent.Display();
-
-        Console.ReadLine();
+        int a = 10, b = 20,Sum;
+        Program New = new Program();
+        Sum=New.Add(a, b);
+        Console.WriteLine(Sum);
+        Console.ReadLine();    
     }
 }
