@@ -228,7 +228,7 @@
 
 //        CallByValue New = new CallByValue();
 //        New.Swap(x,y);
-        
+
 //        Console.Write($"\nValue of 1st num in Main : {x}");
 //        Console.Write($"\nValue of 2nd num in Main : {y}");
 
@@ -238,34 +238,226 @@
 
 //-------------------------------------------------------------------------
 
-public class CallByReference
-{
-    public void Swap(ref int i, ref int j)
-    {
-        int temp = i;
-        i = j;
-        j = temp;
+//public class CallByReference
+//{
+//    public void Swap(ref int i, ref int j)
+//    {
+//        int temp = i;
+//        i = j;
+//        j = temp;
 
-        Console.Write($"\nValue of 1st num in Swap : {i}");
-        Console.Write($"\nValue of 2nd num in Swap : {j}");
+//        Console.Write($"\nValue of 1st num in Swap : {i}");
+//        Console.Write($"\nValue of 2nd num in Swap : {j}");
 
-    }
-    public static void Main()
-    {
-        int x, y;
-        Console.Write("Enter value of 1st num : ");
-        x = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Enter value of 2nd num : ");
-        y = Convert.ToInt32(Console.ReadLine());
+//    }
+//    public static void Main()
+//    {
+//        int x, y;
+//        Console.Write("Enter value of 1st num : ");
+//        x = Convert.ToInt32(Console.ReadLine());
+//        Console.Write("Enter value of 2nd num : ");
+//        y = Convert.ToInt32(Console.ReadLine());
 
-        CallByReference New = new CallByReference();
-        New.Swap(ref x, ref y);
+//        CallByReference New = new CallByReference();
+//        New.Swap(ref x, ref y);
 
-        Console.Write($"\nValue of 1st num in Main : {x}");
-        Console.Write($"\nValue of 2nd num in Main : {y}");
-        Console.WriteLine();
-    }
-}
+//        Console.Write($"\nValue of 1st num in Main : {x}");
+//        Console.WriteLine($"\nValue of 2nd num in Main : {y}");
+//    }
+//}
 
 
 //-------------------------------------------------------------------------
+
+
+//public class Numbers
+//{
+//    public int i;
+//    public int j;
+//}
+//public class Program
+//{
+//    public int Add(Numbers NumObj)
+//    {
+//        return NumObj.i+ NumObj.j;
+//    }
+//    public void Swap(Numbers NumObj)
+//    {
+//        int t = NumObj.i;
+//        NumObj.i = NumObj.j;
+//        NumObj.j = t;
+//        Console.WriteLine($"\n1st num in swap : {NumObj.i}");
+//        Console.Write($"2nd num in swap : {NumObj.j}");
+//    }
+//    public static void Main()
+//    {
+//        Program NewObj=new Program();
+//        Numbers NumObj = new Numbers();
+//        Console.Write("Enter 1st num : ");
+//        NumObj.i = Convert.ToInt32(Console.ReadLine());
+//        Console.Write("Enter 2nd num : ");
+//        NumObj.j = Convert.ToInt32(Console.ReadLine());
+//        int Sum = NewObj.Add(NumObj);
+//        NewObj.Swap(NumObj);
+
+//        Console.WriteLine($"\nSum : {Sum}");
+
+//        Console.WriteLine($"\n1st num in Main : {NumObj.i}");
+//        Console.Write($"2nd num in Main : {NumObj.j}");
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+////public class StaticVar
+////{
+////    public int roll;
+////    public string name;
+////    public static string School;
+////}
+//public class Student
+//{
+//    public int roll;
+//    public string name;
+//    public static string School;
+//    public void Display()
+//    {
+//        Console.WriteLine($"Roll in Display : {roll}");
+//        Console.WriteLine($"Name in Display : {name}");
+//        Console.WriteLine($"School in Display : {School}");
+//    }
+//    public static void Main()
+//    {
+//        //StaticVar New = new StaticVar();
+//        Student st1 = new Student();
+//        Student st2 = new Student();
+//        Student.School = "Belur Boys";
+//        Student st3 = new Student();
+//        Student st4 = new Student();
+//        //School = "SchollName"; //we can also initialize static values like this in main
+
+//        Console.Write("Enter roll : ");
+//        st1.roll = Convert.ToInt32(Console.ReadLine());
+//        Console.Write("Enter name : ");
+//        st1.name = Console.ReadLine();
+
+//        Console.Write("Enter roll : ");
+//        st2.roll = Convert.ToInt32(Console.ReadLine());
+//        Console.Write("Enter Name : ");
+//        st2.name = Console.ReadLine();
+
+//        Console.Write("Enter roll : ");
+//        st3.roll = Convert.ToInt32(Console.ReadLine());
+//        Console.Write("Enter Name : ");
+//        st3.name = Console.ReadLine();
+
+//        Console.Write("Enter roll : ");
+//        st4.roll = Convert.ToInt32(Console.ReadLine());
+//        Console.Write("Enter Name : ");
+//        st4.name = Console.ReadLine();
+
+//        st1.Display();
+//        st2.Display();
+//        st3.Display();
+//        st4.Display();
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+//public class Mainly
+//{
+//    int i;
+//    double j;
+//    string nm;
+//    bool b;
+//    //public Mainly() //This is a Default constructor created by me
+//    public Mainly(int q) //This is a Parameterized constructor created by me
+//    {
+//        i = q;
+//        j = 99.99;
+//        nm = "Shreyan";
+//        //b = True;
+//    }
+//    public void Display(Mainly New)
+//    {
+//        Console.WriteLine(New.i);
+//        Console.WriteLine(New.j);
+//        Console.WriteLine(New.nm);
+//        Console.WriteLine(New.b);
+//        Console.WriteLine();
+//    }
+//    public static void Main()
+//    {
+//        Mainly N1 = new Mainly(1);
+//        Mainly N2 = new Mainly(10);
+        
+//        N1.Display(N1);
+
+//        N2.j = 22.22;
+//        N2.nm = "Ram";
+//        N2.Display(N2);
+//    }
+//}
+
+//-------------------------------------------------------------------------
+
+public class You
+{
+    int roll;
+    string name;
+    int age;
+    string school="SchoolName";
+
+    //Our created default Constructor
+    public You()
+    {
+        roll = 01;
+        name = "Name";
+        age = 18;
+    }
+    ~You()
+    {
+        Console.WriteLine("Destructor working...");
+    }
+
+    //Taking input form user
+    public void Input()
+    {
+        Console.Write("Enter Roll : ");
+        roll = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter Name : ");
+        name = Console.ReadLine();
+        Console.Write("Enter Age : ");
+        age = Convert.ToInt32(Console.ReadLine());
+    }
+
+    //Display Our created Objects Details
+    public void OutPut()
+    {
+        Console.WriteLine($"\nYou entered Roll : {roll}");
+        Console.WriteLine($"You entered Name : {name}");
+        Console.WriteLine($"You entered Age : {age}");
+        Console.WriteLine($"Defalt School name : {school}");
+    }
+
+    public static void Main()
+    {
+        You New_1 = new You();
+        You New_2 = new You();
+        You New_3 = new You();
+
+        New_1.school = "Name of School";
+
+        New_1.Input();
+        New_2.Input();
+
+
+
+        New_1.OutPut();
+        New_2.OutPut();
+        New_3.OutPut();
+    }
+}
