@@ -393,7 +393,7 @@
 //    {
 //        Mainly N1 = new Mainly(1);
 //        Mainly N2 = new Mainly(10);
-        
+
 //        N1.Display(N1);
 
 //        N2.j = 22.22;
@@ -404,60 +404,156 @@
 
 //-------------------------------------------------------------------------
 
-public class You
+//public class You
+//{
+//    int roll;
+//    string name;
+//    int age;
+//    string school="SchoolName";
+
+//    //Our created default Constructor
+//    public You()
+//    {
+//        roll = 01;
+//        name = "Name";
+//        age = 18;
+//    }
+//    ~You()
+//    {
+//        Console.WriteLine("Destructor working...");
+//    }
+
+//    //Taking input form user
+//    public void Input()
+//    {
+//        Console.Write("Enter Roll : ");
+//        roll = Convert.ToInt32(Console.ReadLine());
+//        Console.Write("Enter Name : ");
+//        name = Console.ReadLine();
+//        Console.Write("Enter Age : ");
+//        age = Convert.ToInt32(Console.ReadLine());
+//    }
+
+//    //Display Our created Objects Details
+//    public void OutPut()
+//    {
+//        Console.WriteLine($"\nYou entered Roll : {roll}");
+//        Console.WriteLine($"You entered Name : {name}");
+//        Console.WriteLine($"You entered Age : {age}");
+//        Console.WriteLine($"Defalt School name : {school}");
+//    }
+
+//    public static void Main()
+//    {
+//        You New_1 = new You();
+//        You New_2 = new You();
+//        You New_3 = new You();
+
+//        New_1.school = "Name of School";
+
+//        New_1.Input();
+//        New_2.Input();
+
+
+
+//        New_1.OutPut();
+//        New_2.OutPut();
+//        New_3.OutPut();
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+//public class Name
+//{
+//    public string name,nk;
+//    public Name()
+//    {
+//        name = "Your Name";
+//        nk = "Your nick name";
+//    }
+//    public static void NameMethod()
+//    {
+//        Name n = new Name();
+//        Console.Write("Name: ");
+//        n.name = Console.ReadLine();
+//        Console.Write("Nick Name: ");
+//        n.nk = Console.ReadLine();
+//        Console.WriteLine(n.name);
+//        Console.WriteLine(n.nk);
+//    }
+//}
+//public class Title : Name
+//{
+//    public string title;
+//    public Title()
+//    {
+//        title = "Your Title";
+//    }
+//    public void TitleMethod()
+//    {
+//        NameMethod();
+//        Title t = new Title();
+//        Console.Write("Title: ");
+//        t.title = Console.ReadLine();
+//        Console.WriteLine(t.title);
+//    }
+//}
+//public class Prog 
+//{
+//    public static void Main()
+//    {
+//        Title n1 = new Title();
+//        Title n2 = new Title();
+
+//        n1.TitleMethod();
+//        n2.TitleMethod();
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+public class ClassA
 {
-    int roll;
-    string name;
-    int age;
-    string school="SchoolName";
-
-    //Our created default Constructor
-    public You()
+    int a;
+    public ClassA()
     {
-        roll = 01;
-        name = "Name";
-        age = 18;
+        a = 10;
     }
-    ~You()
+    public void MethodA()
     {
-        Console.WriteLine("Destructor working...");
-    }
-
-    //Taking input form user
-    public void Input()
-    {
-        Console.Write("Enter Roll : ");
-        roll = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Enter Name : ");
-        name = Console.ReadLine();
-        Console.Write("Enter Age : ");
-        age = Convert.ToInt32(Console.ReadLine());
-    }
-
-    //Display Our created Objects Details
-    public void OutPut()
-    {
-        Console.WriteLine($"\nYou entered Roll : {roll}");
-        Console.WriteLine($"You entered Name : {name}");
-        Console.WriteLine($"You entered Age : {age}");
-        Console.WriteLine($"Defalt School name : {school}");
-    }
-
-    public static void Main()
-    {
-        You New_1 = new You();
-        You New_2 = new You();
-        You New_3 = new You();
-
-        New_1.school = "Name of School";
-
-        New_1.Input();
-        New_2.Input();
-
-
-
-        New_1.OutPut();
-        New_2.OutPut();
-        New_3.OutPut();
+        Console.WriteLine(a);
     }
 }
+public class ClassB : ClassA
+{
+    int b;
+    public ClassB()
+    {
+        b = 11;
+    }
+    public void MethodA()
+    {
+        base.MethodA();
+        Console.WriteLine("This is MethodA in ClassB");
+    }
+    public void MethodB()
+    {
+        MethodA();
+        Console.WriteLine(b);
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        ClassB B1 = new ClassB();
+        B1.MethodB();
+    }
+}
+
+
+//-------------------------------------------------------------------------
