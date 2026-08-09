@@ -515,45 +515,338 @@
 
 //-------------------------------------------------------------------------
 
-public class ClassA
-{
-    int a;
-    public ClassA()
-    {
-        a = 10;
-    }
-    public void MethodA()
-    {
-        Console.WriteLine(a);
-    }
-}
-public class ClassB : ClassA
-{
-    int b;
-    public ClassB()
-    {
-        b = 11;
-    }
-    public void MethodA()
-    {
-        base.MethodA();
-        Console.WriteLine("This is MethodA in ClassB");
-    }
-    public void MethodB()
-    {
-        MethodA();
-        Console.WriteLine(b);
-    }
-}
+//public class ClassA
+//{
+//    int a;
+//    public ClassA()
+//    {
+//        a = 10;
+//    }
+//    public void MethodA()
+//    {
+//        Console.WriteLine(a);
+//    }
+//}
+//public class ClassB : ClassA
+//{
+//    int b;
+//    public ClassB()
+//    {
+//        b = 11;
+//    }
+//    public void MethodA()
+//    {
+//        base.MethodA();
+//        Console.WriteLine("This is MethodA in ClassB");
+//    }
+//    public void MethodB()
+//    {
+//        MethodA();
+//        Console.WriteLine(b);
+//    }
+//}
 
-public class Program
-{
-    public static void Main()
-    {
-        ClassB B1 = new ClassB();
-        B1.MethodB();
-    }
-}
+//public class Program
+//{
+//    public static void Main()
+//    {
+//        ClassB B1 = new ClassB();
+//        B1.MethodB();
+//    }
+//}
 
 
 //-------------------------------------------------------------------------
+
+
+//public class ClassA
+//{
+//    public int x;
+//    public ClassA(int x)
+//    {
+//        this.x = x;
+//    }
+//}
+//public class ClassB : ClassA
+//{
+//    public int y, z;
+//    public ClassB(int x,int y,int z):base(x)
+//    {
+//        this.y = y;
+//        this.z = z;
+//    }
+//    public void Output()
+//    {
+//        Console.WriteLine(x);
+//        Console.WriteLine(y);
+//        Console.WriteLine(z);
+//    }
+//}
+//public class Program
+//{
+//    public static void Main()
+//    {
+//        ClassB New = new ClassB(10,20,30);
+//        New.Output();
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+//public class ClassA
+//{
+//    public void Display()
+//    {
+//        Console.WriteLine("This is from ClassA");
+//    }
+//}
+//public class Program :ClassA
+//{
+//    public void Display()
+//    {
+//        base.Display();
+//        Console.WriteLine("Display1 : No value");
+//    }
+//    public void Display(int y)
+//    {
+//        Console.WriteLine("After Overriding Display2 :"+y);
+//    }
+//    public static void Main()
+//    {
+//        Program New = new Program();
+//        //ClassA NewA = new ClassA();
+
+//        //NewA.Display();
+//        New.Display();
+//        New.Display(100);
+//    }
+//}
+
+//-------------------------------------------------------------------------
+
+//public class ClassA
+//{
+//    public virtual void Display()
+//    {
+//        Console.WriteLine("This is from A");
+//    }
+//}
+//public class ClassB :ClassA
+//{
+//    public override void Display()
+//    {
+//        base.Display();
+//        Console.WriteLine("This is from B");
+//    }
+//}
+//public sealed class ClassC : ClassB //Here is "ClassC" is marked as sealed so nother class can inherit "ClassC"
+//{
+//    public override void Display()
+//    {
+//        base.Display();
+//        Console.WriteLine("This is from C");
+//    }
+//}
+
+//public class Program
+//{
+//    public static void Main()
+//    {
+//        ClassC New = new ClassC();
+//        New.Display();
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+//namespace Calculator
+//{
+//    public abstract class Calcu
+//    {
+//        protected int x=10;
+//        protected int y=5;
+//        internal void Output(int Result) //normal Method
+//        {
+//            Console.WriteLine("This is normal method");
+//            Console.WriteLine("Result from Output : " + Result);
+//        }
+//        internal abstract void Input();
+//        internal abstract int Cal();
+//    }
+//    internal class Add : Calcu
+//    {
+//        int num1, num2;
+//        internal override void Input()
+//        {
+//            Console.Write("Enter num1 : ");
+//            num1 = Convert.ToInt32(Console.ReadLine());
+//            Console.Write("Enter num2 : ");
+//            num2 = Convert.ToInt32(Console.ReadLine());
+//        }
+//        internal override int Cal()
+//        {
+//            return num1+num2+x;
+//        }
+//    }
+//    internal class Sub : Calcu
+//    {
+//        int num1, num2;
+//        internal override void Input()
+//        {
+//            Console.Write("Enter num1 : ");
+//            num1 = Convert.ToInt32(Console.ReadLine());
+//            Console.Write("Enter num2 : ");
+//            num2 = Convert.ToInt32(Console.ReadLine());
+//        }
+//        internal override int Cal()
+//        {
+//            return num1 - num2+y;
+//        }
+
+//    }
+//    internal class Program
+//    {
+//        internal static void Main()
+//        {
+//            //Calcu New = new Calcu(); //this object can not be created as this is a abstract class
+//            Add New_1 = new Add();
+//            Sub New_2 = new Sub();
+
+//            New_1.Input();
+//            int Res = New_1.Cal();
+//            New_1.Output(Res);
+//            //Console.WriteLine("Result from Main : " + New_1.Cal());
+
+//            New_2.Input();
+//            Res = New_2.Cal();
+//            New_2.Output(Res);
+//            //Console.WriteLine("Result from Main : " + New_2.Cal());
+//        }
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+
+//public class User
+//{
+//    private string name;
+//    public string GetName()
+//    {
+//        return name;
+//    }
+//    public void SetName(string NewName)
+//    {
+//        name = NewName;
+//    }
+//}
+//public class Function
+//{
+//    public static void Main()
+//    {
+//        User New = new User();
+
+//        Console.Write("Enter the New Name: ");
+//        string n = Console.ReadLine();
+//        New.SetName(n);
+//        Console.WriteLine("NewName :"+New.GetName());
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+
+//public interface IDemo
+//{
+//    public void Display();
+
+//    //public void Display() // we can write this method in iterface after wards C# 8.0
+//    //{                     // but better to only declare the method in Interface   
+//    //    Console.WriteLine("This is Interface");
+//    //}
+//}
+//public class Demo : IDemo
+//{
+//    public void Display()
+//    {
+//        Console.WriteLine("Method from class Demo");
+//    }
+//}
+//public class Program : IDemo
+//{
+//    public void Display()
+//    {
+//        Console.WriteLine("Method from Interface");
+//    }
+//    public static void Main()
+//    {
+//        IDemo N = new Demo();
+//        N.Display();
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+
+namespace Name
+{
+    interface IinterfaceA
+    {
+        public void MethodA();
+        public void MethodB();
+    }
+    interface IinterfaceB
+    {
+        public void MethodC();
+    }
+    class ClassA : IinterfaceA,IinterfaceB
+    {
+        public void MethodA()
+        {
+            Console.WriteLine("Method A - Class A");
+        }
+        public void MethodB()
+        {
+            Console.WriteLine("Method B - Class A");
+        }
+        public void MethodC()
+        {
+            Console.WriteLine("Method C - Class A");
+        }
+    }
+    class ClassB : IinterfaceA,IinterfaceB
+    {
+        public void MethodA()
+        {
+            Console.WriteLine("Method A - Class B");
+        }
+        public void MethodB()
+        {
+            Console.WriteLine("Method B - Class B");
+        }
+        public void MethodC()
+        {
+            Console.WriteLine("Method C - Class B");
+        }
+    }
+    class Program
+    {
+        public static void Main()
+        {
+            ClassA New_1 = new ClassA();
+            New_1.MethodA();
+            New_1.MethodB();
+            New_1.MethodC();
+
+            ClassB New_2 = new ClassB();
+            New_2.MethodA();
+            New_2.MethodB();
+            New_2.MethodC();
+        }
+    }
+}
