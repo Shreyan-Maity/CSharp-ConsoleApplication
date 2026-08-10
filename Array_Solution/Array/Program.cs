@@ -793,60 +793,171 @@
 //-------------------------------------------------------------------------
 
 
-namespace Name
-{
-    interface IinterfaceA
-    {
-        public void MethodA();
-        public void MethodB();
-    }
-    interface IinterfaceB
-    {
-        public void MethodC();
-    }
-    class ClassA : IinterfaceA,IinterfaceB
-    {
-        public void MethodA()
-        {
-            Console.WriteLine("Method A - Class A");
-        }
-        public void MethodB()
-        {
-            Console.WriteLine("Method B - Class A");
-        }
-        public void MethodC()
-        {
-            Console.WriteLine("Method C - Class A");
-        }
-    }
-    class ClassB : IinterfaceA,IinterfaceB
-    {
-        public void MethodA()
-        {
-            Console.WriteLine("Method A - Class B");
-        }
-        public void MethodB()
-        {
-            Console.WriteLine("Method B - Class B");
-        }
-        public void MethodC()
-        {
-            Console.WriteLine("Method C - Class B");
-        }
-    }
-    class Program
-    {
-        public static void Main()
-        {
-            ClassA New_1 = new ClassA();
-            New_1.MethodA();
-            New_1.MethodB();
-            New_1.MethodC();
+//namespace Name
+//{
+//    interface IinterfaceA
+//    {
+//        public void MethodA();
+//        public void MethodB();
+//    }
+//    interface IinterfaceB
+//    {
+//        public void MethodC();
+//    }
+//    class ClassA : IinterfaceA,IinterfaceB
+//    {
+//        public void MethodA()
+//        {
+//            Console.WriteLine("Method A - Class A");
+//        }
+//        public void MethodB()
+//        {
+//            Console.WriteLine("Method B - Class A");
+//        }
+//        public void MethodC()
+//        {
+//            Console.WriteLine("Method C - Class A");
+//        }
+//    }
+//    class ClassB : IinterfaceA,IinterfaceB
+//    {
+//        public void MethodA()
+//        {
+//            Console.WriteLine("Method A - Class B");
+//        }
+//        public void MethodB()
+//        {
+//            Console.WriteLine("Method B - Class B");
+//        }
+//        public void MethodC()
+//        {
+//            Console.WriteLine("Method C - Class B");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main()
+//        {
+//            ClassA New_1 = new ClassA();
+//            New_1.MethodA();
+//            New_1.MethodB();
+//            New_1.MethodC();
 
-            ClassB New_2 = new ClassB();
-            New_2.MethodA();
-            New_2.MethodB();
-            New_2.MethodC();
-        }
+//            ClassB New_2 = new ClassB();
+//            New_2.MethodA();
+//            New_2.MethodB();
+//            New_2.MethodC();
+//        }
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+
+//public interface INum
+//{
+
+//}
+//public class Name
+//{
+//    int x;
+//    public Name(int x) //Constructor
+//    {
+//        this.x=x;
+//    }
+//    public void Method()
+//    {
+//        Console.WriteLine(x);
+//    }
+//    public void Method(int x) //This is Method Overloading
+//    {
+//        Console.WriteLine(x);
+//    }
+//}
+//class Program :Name
+//{
+//    public Program(int x) : base(x)
+//    {
+
+//    }
+//    public static void Main()
+//    {
+//        Name New = new Name(10);
+//        New.Method();
+//        New.Method(11);
+//        Program N = new Program(12);
+//        N.Method();
+//        N.Method(13);
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+
+//class Method
+//{
+//    public static void Main()
+//    {
+//        int x = 100;
+//        int y = 0;
+//        try
+//        {
+//            Console.WriteLine(x / y);
+//        }
+//        catch(DivideByZeroException ex)
+//        {
+//            Console.WriteLine("Exception");
+//        }
+//        finally
+//        {
+//            Console.WriteLine("Finally");
+//        }
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+
+public class ClassA
+{
+    int integer;
+    float salary;
+    string Name;
+    public ClassA() //Default Constructor
+    {
+        integer = 10;
+        salary = 99.99f;
+        Name = "Your Name";
+    }
+    public ClassA(int integer,float salary,string Name) //Parameterized Constructor
+    {
+        this.integer = integer;
+        this.salary = salary;
+        this.Name = Name;
+    }
+    public void MethodA() //Method
+    {
+        Console.WriteLine(integer);
+        Console.WriteLine(salary);
+        Console.WriteLine(Name);
+    }
+    public void MethodA(int x) //Method OverLoading (Ploymorphism)
+    {
+        Console.WriteLine(x);
+    }
+    public static void Main() //Main Method
+    {
+        ClassA New = new ClassA(11,12.09f,"Shreyan");
+        ClassA Old = new ClassA();
+        New.MethodA();
+        Old.MethodA();
+        Old.MethodA(100);
     }
 }
+
+
+//-------------------------------------------------------------------------
+
