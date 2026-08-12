@@ -921,43 +921,124 @@
 //-------------------------------------------------------------------------
 
 
-public class ClassA
-{
-    int integer;
-    float salary;
-    string Name;
-    public ClassA() //Default Constructor
-    {
-        integer = 10;
-        salary = 99.99f;
-        Name = "Your Name";
-    }
-    public ClassA(int integer,float salary,string Name) //Parameterized Constructor
-    {
-        this.integer = integer;
-        this.salary = salary;
-        this.Name = Name;
-    }
-    public void MethodA() //Method
-    {
-        Console.WriteLine(integer);
-        Console.WriteLine(salary);
-        Console.WriteLine(Name);
-    }
-    public void MethodA(int x) //Method OverLoading (Ploymorphism)
-    {
-        Console.WriteLine(x);
-    }
-    public static void Main() //Main Method
-    {
-        ClassA New = new ClassA(11,12.09f,"Shreyan");
-        ClassA Old = new ClassA();
-        New.MethodA();
-        Old.MethodA();
-        Old.MethodA(100);
-    }
-}
+//public class ClassA
+//{
+//    int integer;
+//    float salary;
+//    string Name;
+//    public ClassA() //Default Constructor
+//    {
+//        integer = 10;
+//        salary = 99.99f;
+//        Name = "Your Name";
+//    }
+//    public ClassA(int integer,float salary,string Name) //Parameterized Constructor
+//    {
+//        this.integer = integer;
+//        this.salary = salary;
+//        this.Name = Name;
+//    }
+//    public void MethodA() //Method
+//    {
+//        Console.WriteLine(integer);
+//        Console.WriteLine(salary);
+//        Console.WriteLine(Name);
+//    }
+//    public void MethodA(int x) //Method OverLoading (Ploymorphism)
+//    {
+//        Console.WriteLine(x);
+//    }
+//    public static void Main() //Main Method
+//    {
+//        ClassA New = new ClassA(11,12.09f,"Shreyan");
+//        ClassA Old = new ClassA();
+//        New.MethodA();
+//        Old.MethodA();
+//        Old.MethodA(100);
+//    }
+//}
 
 
 //-------------------------------------------------------------------------
 
+//public class Class
+//{
+//    public static void Main()
+//    {
+//        List<int> New = new List<int>();
+
+//        New.Add(50);
+//        New.Add(20);
+//        New.Add(40);
+//        New.Add(10);
+//        New.Add(30);
+
+//        New.Remove(20);
+//        New.Sort();
+//        foreach(int item in New)
+//        {
+//            Console.WriteLine(item + " ");
+//        }
+//        Console.WriteLine(New.Count);
+
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+
+namespace Interface
+{
+    interface Iinterface
+    {
+        public void MethodCal();
+    }
+    public class ClassA : Iinterface
+    {
+        public string userName { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
+        public ClassA(string userName)
+        {
+            this.userName = userName;
+        }
+        public ClassA(int x,int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+        public void MethodCal()
+        {
+            Console.WriteLine($"ClassA - MethodCal - {userName}");
+        }
+    }
+    public class ClassB : ClassA
+    {
+        public ClassB(string userName) : base(userName) { }
+        public void MethodCal()
+        {
+            Console.WriteLine($"ClassB - MethodCal - {userName}");
+        }
+    }
+    public class ClassC : ClassA
+    {
+        public ClassC(string userName) : base(userName) { }
+        public void MethodCal()
+        {
+            Console.WriteLine($"ClassC - MethodCal - {userName}");
+        }
+    }
+    public class Program
+    {
+        public static void Main()
+        {
+            Iinterface objA = new ClassA("Ram");
+            Iinterface objA_1 = new ClassA(9,10);
+            objA.MethodCal();
+            objA_1.MethodCal();
+
+
+        }
+    }
+}
