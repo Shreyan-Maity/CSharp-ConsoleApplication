@@ -992,7 +992,7 @@ namespace Interface
 {
     interface Iinterface
     {
-        public void MethodCal();
+        void MethodCal(); //inside interface we cannot have acces modifieres
     }
     public class ClassA : Iinterface
     {
@@ -1012,10 +1012,15 @@ namespace Interface
         {
             Console.WriteLine($"ClassA - MethodCal - {userName}");
         }
+        public void MethodCal(int num)
+        {
+            Console.WriteLine($"ClassA - MethodCal - {x+y} + {num} = {x+y+num}");
+        }
     }
     public class ClassB : ClassA
     {
         public ClassB(string userName) : base(userName) { }
+        public ClassB(int x, int y) : base(x,y) { }
         public void MethodCal()
         {
             Console.WriteLine($"ClassB - MethodCal - {userName}");
@@ -1024,6 +1029,7 @@ namespace Interface
     public class ClassC : ClassA
     {
         public ClassC(string userName) : base(userName) { }
+        public ClassC(int x, int y) : base(x, y) { }
         public void MethodCal()
         {
             Console.WriteLine($"ClassC - MethodCal - {userName}");
@@ -1034,11 +1040,33 @@ namespace Interface
         public static void Main()
         {
             Iinterface objA = new ClassA("Ram");
-            Iinterface objA_1 = new ClassA(9,10);
+            ClassA objA_1 = new ClassA(9,10);
+            ClassA Obj_A_11 = new ClassA("Ram-1");
             objA.MethodCal();
-            objA_1.MethodCal();
+            objA_1.MethodCal(10);
+            Obj_A_11.MethodCal();
 
+            Console.WriteLine();
 
+            Iinterface objB = new ClassB("Sam");
+            ClassB objB_1 = new ClassB(11, 12);
+            ClassB Obj_B_11 = new ClassB("Ram-1");
+            objB.MethodCal();
+            objB_1.MethodCal(11);
+            Obj_B_11.MethodCal();
+
+            Console.WriteLine();
+
+            Iinterface objC = new ClassC("Jadu");
+            ClassC objC_1 = new ClassC(30,20);
+            ClassC Obj_C_11 = new ClassC("Jadu-1");
+            objC.MethodCal();
+            objC_1.MethodCal(50);
+            Obj_C_11.MethodCal();
         }
     }
 }
+
+
+//-------------------------------------------------------------------------
+
