@@ -1070,42 +1070,44 @@
 
 //-------------------------------------------------------------------------
 
-using System.Collections.Generic;
+//using System.Collections.Generic;
 
-namespace Collections
-{
-    public class ClassA
-    {
-        public static void Main()
-        {
-            List<int> Marks = new List<int> { 92, 99, 80, 79, 85 };
+//namespace Collections
+//{
+//    public class ClassA
+//    {
+//        public static void Main()
+//        {
+//            List<int> Marks = new List<int> { 92, 99, 80, 79, 85 };
 
-            int avg = 0;
-            foreach(int num in Marks)
-            {
-                avg += num;
-                Console.Write(num + " ");
-            }
-            avg /= Marks.Count;
-            Console.WriteLine("\nThe Average of the List : "+avg);
+//            int avg = 0;
+//            foreach(int num in Marks)
+//            {
+//                avg += num;
+//                Console.Write(num + " ");
+//            }
+//            avg /= Marks.Count;
+//            Console.WriteLine("\nThe Average of the List : "+avg);
 
-            int High = int.MinValue;
-            //Console.WriteLine(High);
-            int Low = int.MaxValue;
-            //Console.WriteLine(Low);
+//            int High = int.MinValue;
+//            //Console.WriteLine(High);
+//            int Low = int.MaxValue;
+//            //Console.WriteLine(Low);
 
-            foreach(int num in Marks)
-            {
-                if (num > High) High = num;
-                if (num < Low) Low = num;
-            }
-            Console.WriteLine("Highest Number is : " + High);
-            Console.WriteLine("Lowest Number is : " + Low);
-        }
+//            foreach(int num in Marks)
+//            {
+//                if (num > High) High = num;
+//                if (num < Low) Low = num;
+//            }
+//            Console.WriteLine("Highest Number is : " + High);
+//            Console.WriteLine("Lowest Number is : " + Low);
+//        }
 
-    }
-}
+//    }
+//}
 
 
 //-------------------------------------------------------------------------
 
+
+using System.Collections.Generic;
