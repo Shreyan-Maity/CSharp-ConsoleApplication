@@ -988,82 +988,121 @@
 //-------------------------------------------------------------------------
 
 
-namespace Interface
+//namespace Interface
+//{
+//    interface Iinterface
+//    {
+//        void MethodCal(); //inside interface we cannot have acces modifieres
+//    }
+//    public class ClassA : Iinterface
+//    {
+//        public string userName { get; set; }
+//        public int x { get; set; }
+//        public int y { get; set; }
+//        public ClassA(string userName)
+//        {
+//            this.userName = userName;
+//        }
+//        public ClassA(int x,int y)
+//        {
+//            this.x = x;
+//            this.y = y;
+//        }
+//        public void MethodCal()
+//        {
+//            Console.WriteLine($"ClassA - MethodCal - {userName}");
+//        }
+//        public void MethodCal(int num)
+//        {
+//            Console.WriteLine($"ClassA - MethodCal - {x+y} + {num} = {x+y+num}");
+//        }
+//    }
+//    public class ClassB : ClassA
+//    {
+//        public ClassB(string userName) : base(userName) { }
+//        public ClassB(int x, int y) : base(x,y) { }
+//        public void MethodCal()
+//        {
+//            Console.WriteLine($"ClassB - MethodCal - {userName}");
+//        }
+//    }
+//    public class ClassC : ClassA
+//    {
+//        public ClassC(string userName) : base(userName) { }
+//        public ClassC(int x, int y) : base(x, y) { }
+//        public void MethodCal()
+//        {
+//            Console.WriteLine($"ClassC - MethodCal - {userName}");
+//        }
+//    }
+//    public class Program
+//    {
+//        public static void Main()
+//        {
+//            Iinterface objA = new ClassA("Ram");
+//            ClassA objA_1 = new ClassA(9,10);
+//            ClassA Obj_A_11 = new ClassA("Ram-1");
+//            objA.MethodCal();
+//            objA_1.MethodCal(10);
+//            Obj_A_11.MethodCal();
+
+//            Console.WriteLine();
+
+//            Iinterface objB = new ClassB("Sam");
+//            ClassB objB_1 = new ClassB(11, 12);
+//            ClassB Obj_B_11 = new ClassB("Ram-1");
+//            objB.MethodCal();
+//            objB_1.MethodCal(11);
+//            Obj_B_11.MethodCal();
+
+//            Console.WriteLine();
+
+//            Iinterface objC = new ClassC("Jadu");
+//            ClassC objC_1 = new ClassC(30,20);
+//            ClassC Obj_C_11 = new ClassC("Jadu-1");
+//            objC.MethodCal();
+//            objC_1.MethodCal(50);
+//            Obj_C_11.MethodCal();
+//        }
+//    }
+//}
+
+
+//-------------------------------------------------------------------------
+
+using System.Collections.Generic;
+
+namespace Collections
 {
-    interface Iinterface
-    {
-        void MethodCal(); //inside interface we cannot have acces modifieres
-    }
-    public class ClassA : Iinterface
-    {
-        public string userName { get; set; }
-        public int x { get; set; }
-        public int y { get; set; }
-        public ClassA(string userName)
-        {
-            this.userName = userName;
-        }
-        public ClassA(int x,int y)
-        {
-            this.x = x;
-            this.y = y;
-        }
-        public void MethodCal()
-        {
-            Console.WriteLine($"ClassA - MethodCal - {userName}");
-        }
-        public void MethodCal(int num)
-        {
-            Console.WriteLine($"ClassA - MethodCal - {x+y} + {num} = {x+y+num}");
-        }
-    }
-    public class ClassB : ClassA
-    {
-        public ClassB(string userName) : base(userName) { }
-        public ClassB(int x, int y) : base(x,y) { }
-        public void MethodCal()
-        {
-            Console.WriteLine($"ClassB - MethodCal - {userName}");
-        }
-    }
-    public class ClassC : ClassA
-    {
-        public ClassC(string userName) : base(userName) { }
-        public ClassC(int x, int y) : base(x, y) { }
-        public void MethodCal()
-        {
-            Console.WriteLine($"ClassC - MethodCal - {userName}");
-        }
-    }
-    public class Program
+    public class ClassA
     {
         public static void Main()
         {
-            Iinterface objA = new ClassA("Ram");
-            ClassA objA_1 = new ClassA(9,10);
-            ClassA Obj_A_11 = new ClassA("Ram-1");
-            objA.MethodCal();
-            objA_1.MethodCal(10);
-            Obj_A_11.MethodCal();
+            List<int> Marks = new List<int> { 92, 99, 80, 79, 85 };
 
-            Console.WriteLine();
+            int avg = 0;
+            foreach(int num in Marks)
+            {
+                avg += num;
+                Console.Write(num + " ");
+            }
+            avg /= Marks.Count;
+            Console.WriteLine("\nThe Average of the List : "+avg);
 
-            Iinterface objB = new ClassB("Sam");
-            ClassB objB_1 = new ClassB(11, 12);
-            ClassB Obj_B_11 = new ClassB("Ram-1");
-            objB.MethodCal();
-            objB_1.MethodCal(11);
-            Obj_B_11.MethodCal();
+            int High = int.MinValue;
+            //Console.WriteLine(High);
+            int Low = int.MaxValue;
+            //Console.WriteLine(Low);
 
-            Console.WriteLine();
-
-            Iinterface objC = new ClassC("Jadu");
-            ClassC objC_1 = new ClassC(30,20);
-            ClassC Obj_C_11 = new ClassC("Jadu-1");
-            objC.MethodCal();
-            objC_1.MethodCal(50);
-            Obj_C_11.MethodCal();
+            foreach(int num in Marks)
+            {
+                if (num > High) High = num;
+                if (num < Low) Low = num;
+            }
+            Console.WriteLine("Highest Number is : " + High);
+            Console.WriteLine("Lowest Number is : " + Low);
         }
+
     }
 }
 
